@@ -1,0 +1,30 @@
+{
+  "name": "yourban-api",
+  "version": "1.0.0",
+  "description": "Simple Backend API bootstrapped with ExpressJs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "beeAzul",
+  "license": "ISC",
+  "dependencies": {
+    "@types/node": "^22.0.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "envalid": "^8.0.0",
+    "express": "^4.19.2",
+    "helmet": "^7.1.0",
+    "http-status-codes": "^2.3.0",
+    "pino-http": "^10.2.0",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/express": "^4.17.21",
+    "pino-pretty": "^11.2.2",
+    "tsup": "^8.2.3",
+    "tsx": "^4.16.5",
+    "typescript": "^5.5.4"
+  }
+}
