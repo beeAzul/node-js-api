@@ -1,7 +1,18 @@
-import path from "path";
+import path, {dirname} from "path";
 import {readFile, writeFile} from "fs/promises";
+import {fileURLToPath} from 'url';
 
-const dataFilePath = path.join('../../../', 'MOCK_DATA.json');
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+const dataFilePath = path.join(__dirname, '../datas', 'MOCK_DATA.json');
+
+
+export const getLastInsertId = async () => {
+    const rawData = await readFile(dataFilePath, 'utf-8');
+    const result = JSON.parse(rawData)
+   return result.slice(-1)[0].id
+};
 
 // Helper function to read data from JSON file
 export const readData = async () => {
