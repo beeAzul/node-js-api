@@ -1,0 +1,253 @@
+{
+	"info": {
+		"_postman_id": "5949cb21-33f4-48b8-92d4-1aafc7a645b8",
+		"name": "Yourban",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "1983276"
+	},
+	"item": [
+		{
+			"name": "Home",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/home",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"home"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get all etablissements",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/etablissements",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"etablissements"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get etablissement by id",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/etablissement/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"etablissement",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get etablissement by secteur",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/etablissements/type/kids",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"etablissements",
+						"type",
+						"kids"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get etablissement by criteria",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n    {\n        \"prop\": \"location\",\n        \"value\": \"Tokyo\"\n    },\n    {\n        \"prop\": \"etablissement_type\",\n        \"value\": \"Shoes\"\n    }\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/etablissements/criteria",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"etablissements",
+						"criteria"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create etablissement",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"etablissement_type\": \"Shoes\",\n    \"etablissement\": \"Toji Dono, Inc.\",\n    \"location\": \"Tokyo\",\n    \"address\": \"13 bulevare Street\",\n    \"mail\": \"toji.s@jjk.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/etablissement",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"etablissement"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update etablissement by id",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 1012,\n    \"etablissement_type\": \"Shoes\",\n    \"etablissement\": \"Tojiiddddiii Dono, Inc.\",\n    \"location\": \"Tokyo\",\n    \"address\": \"13 bulevare Street\",\n    \"mail\": \"toji.s@jjk.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/etablissement/1012",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"etablissement",
+						"1012"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get etablissement by id",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/etablissement/1012",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"etablissement",
+						"1012"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
